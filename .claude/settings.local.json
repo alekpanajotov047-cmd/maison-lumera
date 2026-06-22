@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api *)",
+      "PowerShell(gh api repos/anthropics/skills/contents/skills/frontend-design)",
+      "WebFetch(domain:api.github.com)",
+      "PowerShell(New-Item -ItemType Directory -Force \"$env:USERPROFILE\\\\.claude\\\\skills\\\\frontend-design\" | Out-Null; Invoke-WebRequest -Uri \"https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md\" -OutFile \"$env:USERPROFILE\\\\.claude\\\\skills\\\\frontend-design\\\\SKILL.md\"; Invoke-WebRequest -Uri \"https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/LICENSE.txt\" -OutFile \"$env:USERPROFILE\\\\.claude\\\\skills\\\\frontend-design\\\\LICENSE.txt\"; Get-ChildItem \"$env:USERPROFILE\\\\.claude\\\\skills\\\\frontend-design\")",
+      "WebFetch(domain:github.com)"
+    ]
+  }
+}

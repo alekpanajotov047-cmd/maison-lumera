@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #FAF6F0;
+  --sand: #F2EBE0;
+  --espresso: #2A1F18;
+  --taupe: #6B5B4E;
+  --camel: #B08968;
+  --gold: #C9A961;
+
+  /* shadcn-style tokens mapped to the Maison Lumèra palette */
+  --background: #FAF6F0;
+  --foreground: #2A1F18;
+  --primary: #B08968;
+  --secondary: #C9A961;
+  --muted-foreground: #6B5B4E;
+  --border: #E8DECF;
+  --destructive: #B0593F;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  background: var(--cream);
+  color: var(--espresso);
+}
+
+::selection {
+  background: var(--camel);
+  color: var(--cream);
+}
+
+/* Subtle film grain for luxury feel */
+.grain::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.04;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Custom scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar on horizontal scroll containers but keep functionality */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
